@@ -38,8 +38,11 @@ _method_C() {
 
 /**
  * 也就是首先执行_startMethod这个方法用async声明了，
- * 因为方法里调用了_method_A，所以先输出print("A开始执行这个方法~");，后面执行_method_B()，
+ * 因为方法里调用了_method_A，所以先输出print("A开始执行这个方法~");，
+ * 
+ * 后面执行_method_B()，
  * 这个方法用await关键字声明，所以会暂停print("start结束");的执行，
+ * 
  * 然后继续执行_method_B()将print("B开始执行这个方法~");输出，
  * 下一行遇到await关键字，会暂停其他代码的执行。
  * 当await关键字引用的Future执行完成(也就是执行print("后面执行这句话~")，_method_C()方法会立即执行，
